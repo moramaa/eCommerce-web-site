@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import products from './data/products.js'
 
+
 dotenv.config() 
 //call to the mongos 
 connectDB() 
