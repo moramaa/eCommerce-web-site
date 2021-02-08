@@ -9,11 +9,12 @@ const reviewSchema = mongoose.Schema({
     timestamps:true
 })
 
-const productSchema =mongoose.Schema({
+const productSchema =mongoose.Schema(
+    {
     user:{
-        type:mpngoose.Schema.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
-        ref: 'USer'
+        ref: 'User'
     },
     name:{
         type:String,
@@ -24,26 +25,24 @@ const productSchema =mongoose.Schema({
         required:true,
     },
     brand:{
-        type:Number,
+        type:String,
         required:true
     },
     category:{
-        type:Boolean,
+        type:String,
         required:true,
-        default:false
     },
     description:{
-        type:Boolean,
+        type:String,
         required:true,
-        default:false
     },
     rating:{
-        type:Boolean,
+        type:Number,
         required:true,
-        default:false
+        default:0
     },
     //arr of reviews
-    Reviews:[reviewsSchema],
+    Reviews:[reviewSchema],
     numReviews:{
         type:Number,
         required:true,
