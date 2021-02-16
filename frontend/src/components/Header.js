@@ -8,7 +8,7 @@ const Header = () => {
             <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
               <Container>
             <LinkContainer to="/">
-            <Navbar.Brand >צור עולם של יין</Navbar.Brand>
+            <Navbar.Brand >חנות</Navbar.Brand>
             </LinkContainer>
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
