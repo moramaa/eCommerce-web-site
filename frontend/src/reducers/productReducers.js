@@ -6,6 +6,7 @@ import {
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL
 } from '../constants/productsConstants'
+// Product list reducer 
 export const productListReducer = (state={products: [] },action)=> {
     
     switch (action.type) {
@@ -20,6 +21,7 @@ export const productListReducer = (state={products: [] },action)=> {
             return state
     }
 }
+// Single product reducer 
 export const productDetailsReducer = (state={product: {reviews: []} },action)=> {
     
     switch (action.type) {
