@@ -8,7 +8,7 @@ import Massage from '../components/Message'
  import {listProductDetails} from '../actions/productsActions'
 
 const ProductScreen = ({ history, match}) => {
-    const [qty, setQty] = useState(0)
+    const [qty, setQty] = useState(1)
     
     const dispatch = useDispatch()
 
@@ -20,11 +20,11 @@ const ProductScreen = ({ history, match}) => {
     },[dispatch, match])
 
     const addToCartHandler =() =>{
-        history.push(` /cart/${match.params.id}?qty=${qty} `)
+        history.push(`/cart/${match.params.id}?qty=${qty}`)
     }
 
     return <>
-    <Link className='btn btn=light my-3' to='/' >
+    <Link className='btn btn-light my-3' to='/' >
         Go back
     </Link>
     {loading ? <Loader /> 

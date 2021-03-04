@@ -7,6 +7,7 @@ import {
     // Dispatch all products list
 export const listProducts =() => async(dispatch) => {
 try {
+
     dispatch({type: PRODUCT_LIST_REQUEST})
     
     const {data} =await axios.get('/api/products')
@@ -18,6 +19,7 @@ try {
 
 } catch (error) {
     dispatch({
+        
         type: PRODUCT_LIST_FAIL,
         payload: error.response && error.response.data.massage 
         ? error.response.data.massage
