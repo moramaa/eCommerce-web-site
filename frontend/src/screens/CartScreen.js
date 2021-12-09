@@ -11,7 +11,7 @@ const CartScreen = ({match, location, history}) => {
 
     const productId = match.params.id
     //return the number of qty they sent in the URL
-    const qty = location.search ? Number(location.search.split('=') [1]) : 1
+    const qty = location.search ? Number(location.search.split('=') [1]) :1
  
     const dispatch = useDispatch()
 
@@ -36,7 +36,7 @@ const CartScreen = ({match, location, history}) => {
             <Col md={8}>
             <h1>העגלה שלך</h1>
             {cartItems.length === 0 ? (<Massage>העגלה ריקה <Link to='/'>המשך לקנות</Link></Massage> )
-            :(<ListGroup variant='flush'>
+            : (<ListGroup variant='flush'>
 
                 {cartItems.map(item => (
                     <ListGroup.Item key={item.product}>
@@ -50,7 +50,7 @@ const CartScreen = ({match, location, history}) => {
                             <Col md={2}> ${item.price} </Col>
                             <Col md={2}> 
                             <Form.Control as='select' value={item.qty} 
-                                    onChange={(e) => dispatch (addToCart(item.product,Number(e.target.value)))}
+                                    onChange={(e) => dispatch (addToCart(item.product, Number(e.target.value)))}
                                     >
                                      {
                                      [...Array(item.countInStock).keys()].map( (x) =>(
